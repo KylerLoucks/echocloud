@@ -1,0 +1,7 @@
+.vscode
+__pycache__
+geckodriver.log
+dynamodb.py
+Python dockerfile
+sam-project
+lambda_layers

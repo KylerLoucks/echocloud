@@ -29,22 +29,23 @@ class WebScraper():
         None
         '''
         options = Options()
-        options.add_argument('--start-maximized')
         options.add_argument('--headless') # no browser pop-up - Remove this line when testing locally
         options.add_argument("--single-process") # - Remove this line when testing locally
         options.add_argument('--no-sandbox')
-        options.add_argument("--disable-gpu")
+        options.add_argument('--disable-dev-shm-usage')
         options.add_argument("--window-size=1280x1696") # required for selenium execute_script()
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--disable-dev-tools")
-        options.add_argument("--no-zygote")
-        options.add_argument("--disable-infobars")
-        options.add_argument("--disable-browser-side-navigation")
-        options.add_argument("--disable-extensions")
+        
+        #options.add_argument('--start-maximized')
+        #options.add_argument("--disable-gpu")
+        
+        #options.add_argument("--disable-dev-tools")
+        #options.add_argument("--no-zygote")
+        #options.add_argument("--disable-infobars")
+        #options.add_argument("--disable-browser-side-navigation")
+        #options.add_argument("--disable-extensions")
         #chrome_options.binary_location = './chromedriver/headless-chromium' # location for AWS lambda to find the chrome binary. AWS Lambda extracts layer files into the /opt directory
 
         driver = webdriver.Chrome(options=options)
-        #driver.maximize_window()
         driver.get(f"https://www.coindesk.com/price/{self.symbol_full}/") # open browser
         print("Opened headless chrome browser")
         

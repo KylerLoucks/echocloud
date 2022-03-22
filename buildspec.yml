@@ -2,8 +2,6 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo "Pulling docker image"
-      - echo docker pull python:3.8-alpine
       - echo "Logging into Amazon ECR"
       - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/l2t9w8o1
   build:

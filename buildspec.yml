@@ -12,6 +12,6 @@ phases:
       - docker tag echocloud:latest public.ecr.aws/l2t9w8o1/echocloud:latest
   post_build:
     commands:
-      - echo "Build completed on `date`"
       - echo "Pushing the Docker image to ECR"
       - docker push public.ecr.aws/l2t9w8o1/echocloud:latest
+      - echo "Build completed on `date`"

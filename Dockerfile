@@ -17,10 +17,10 @@ RUN apk add --no-cache \
     gcc \
     libc-dev \
     libffi-dev \
-    py3-pip
-    # openssl-dev \
-    # git \
-    #zlib-dev
+    py3-pip \
+    openssl-dev \
+    git \
+    zlib-dev
 
 # Install pip requirements
 COPY requirements.txt .

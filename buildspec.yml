@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo "Logging into Amazon ECR"
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/l2t9w8o1
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - echo "Building the Docker image"          
+      - docker build -t echocloud:latest .
+      - docker tag echocloud:latest public.ecr.aws/l2t9w8o1/echocloud:latest
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+      - echo "Pushing the Docker image to ECR"
+      - docker push public.ecr.aws/l2t9w8o1/echocloud:latest

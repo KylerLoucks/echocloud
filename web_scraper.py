@@ -29,6 +29,7 @@ class WebScraper():
         None
         '''
         options = Options()
+        options.add_argument('--start-maximized')
         options.add_argument('--headless') # no browser pop-up - Remove this line when testing locally
         options.add_argument("--single-process") # - Remove this line when testing locally
         options.add_argument('--no-sandbox')
@@ -37,16 +38,20 @@ class WebScraper():
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--disable-dev-tools")
         options.add_argument("--no-zygote")
+        options.add_argument("--disable-infobars")
+        options.add_argument("--disable-browser-side-navigation")
+        options.add_argument("--disable-extensions")
         #chrome_options.binary_location = './chromedriver/headless-chromium' # location for AWS lambda to find the chrome binary. AWS Lambda extracts layer files into the /opt directory
 
         driver = webdriver.Chrome(options=options)
-        driver.maximize_window()
+        #driver.maximize_window()
         driver.get(f"https://www.coindesk.com/price/{self.symbol_full}/") # open browser
-        
+        print("Opened headless chrome browser")
         
         # switch to candles view
         driver.find_element(By.CLASS_NAME, "react-switch ").click()
-        
+        print("Switched graph to candles view")
+
         # remove unwanted elements
         remove_highcharts_script = """
         var highcharts = document.querySelector(".highcharts-credits");
@@ -59,15 +64,16 @@ class WebScraper():
             images[i].parentNode.removeChild(images[i]);
         }
         """
-        remove_x_axis_labels_script = """
-        var labels = document.getElementsByClassName("highcharts-axis-labels highcharts-xaxis-labels")[0];
-        labels.parentNode.removeChild(labels);
-        """
+        # remove_x_axis_labels_script = """
+        # var labels = document.getElementsByClassName("highcharts-axis-labels highcharts-xaxis-labels")[0];
+        # labels.parentNode.removeChild(labels);
+        # """
         
         driver.execute_script(remove_watermark_script) # remove watermark
         driver.execute_script(remove_highcharts_script) # remove highcharts.com text
         #driver.execute_script(remove_x_axis_labels_script) # remove the time labels
-        
+        print("Removed unnecessary elements")
+
         if hours_24 == False:
             WebDriverWait(driver=driver, timeout=5).until(expected_conditions.visibility_of_element_located((By.CLASS_NAME, "highcharts-series-group")))
             driver.find_element(By.CSS_SELECTOR, "div.ibARTa:nth-child(1)").click() # click '1H' Button

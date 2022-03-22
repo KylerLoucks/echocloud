@@ -8,7 +8,7 @@ phases:
     commands:
       - echo "Build started on `date`"
       - echo "Building the Docker image"          
-      - docker build -t echocloud:latest .
+      - docker build -t echocloud .
       - docker tag echocloud:latest public.ecr.aws/l2t9w8o1/echocloud:latest
   post_build:
     commands:

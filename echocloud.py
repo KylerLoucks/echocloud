@@ -68,7 +68,7 @@ def tweet() -> None:
         print(f"24h Price is up/down: {hour24['percent']:.2f}%")
         
         # if stock was up in the last 24 hours
-        if hour24["percent"] > 0:
+        if hour24["percent"] > 0 and hour24["percent"] > 1.5:
             scraper.screenshot_stock_graph(filename="canvas", hours_24=True)
 
             # format 2 decimal places - example: 0.0345 = 3.45

@@ -1,5 +1,5 @@
 # echocloud
-Posts twitter updates when Bitcoin is down a specific threshold.
+Posts twitter updates when Bitcoin or another specified Cryptocurrency is down a specific threshold.
 
 
 # How it works

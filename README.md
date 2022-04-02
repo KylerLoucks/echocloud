@@ -37,7 +37,7 @@ Generated in the Twitter API developer portal under: Keys and Secrets > Authenti
 ![image](https://user-images.githubusercontent.com/60449948/161392560-526f8d60-edbb-44e2-926f-f558363f13ca.png)
 
 
-###### Building and running the container locally (replace 'key' with API key values)
+#### Building and running the container locally (replace 'key' with API key values)
   
 ```bash
 docker build -t echocloud .

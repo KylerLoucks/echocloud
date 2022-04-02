@@ -9,6 +9,9 @@ Utilizes Alpha Vantage API for stock data
 
 Container will not run continuously. It is recommended to run the container as a CRON job.
 
+Twitter post example:
+![image](https://user-images.githubusercontent.com/60449948/161397790-fd968587-51f0-4b5c-a7b5-45c2cfa540ef.png)
+
 # Environment variables
 
 `BLOCKCHAIN_SYMBOL`

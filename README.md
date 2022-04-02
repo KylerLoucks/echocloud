@@ -9,7 +9,7 @@ Runs a headless chromium browser in a light-weight alpine-linux Docker container
 
 # Environment variables
 
-<optional>
+###### <optional>
 `BLOCKCHAIN_SYMBOL`
 
 specify the ticker symbol to find the stock price of (e.g. BTC, ETH, etc..)
@@ -20,7 +20,7 @@ specify the ticker symbol to find the stock price of (e.g. BTC, ETH, etc..)
 API Key for Alpha Vantage stock market data
 
   
-## Twitter API "Consumer Keys"
+###### Twitter API "Consumer Keys"
 `TWITTER_API_KEY`,
 `TWITTER_API_SECRET`
 
@@ -28,7 +28,7 @@ Generated in the Twitter API developer portal under: Keys and Secrets > Consumer
 ![image](https://user-images.githubusercontent.com/60449948/161392837-4e1c9a5b-5f97-4805-bc7c-0813905c4177.png)
 
 
-## Twitter API "Authentication Tokens"
+###### Twitter API "Authentication Tokens"
 `TWITTER_ACCESS_TOKEN`,
 `TWITTER_ACCESS_TOKEN_SECRET`
 
@@ -36,7 +36,7 @@ Generated in the Twitter API developer portal under: Keys and Secrets > Authenti
 ![image](https://user-images.githubusercontent.com/60449948/161392560-526f8d60-edbb-44e2-926f-f558363f13ca.png)
 
 
-# Building and running the container locally (replace 'key' with API key values)
+###### Building and running the container locally (replace 'key' with API key values)
   
 ```bash
 docker build -t echocloud .

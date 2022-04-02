@@ -43,10 +43,12 @@ docker build -t echocloud .
 
 docker run -d \
 -e AV_API_KEY=key \
--e TWITTER_API_KEY=key -e TWITTER_API_SECRET=key \
+-e TWITTER_API_KEY=key \
+-e TWITTER_API_SECRET=key \
 -e TWITTER_ACCESS_TOKEN=key \
 -e TWITTER_ACCESS_TOKEN_SECRET=key \
--e BLOCKCHAIN_SYMBOL=ETH echocloud
+-e BLOCKCHAIN_SYMBOL=ETH \
+echocloud
 ```
   
   

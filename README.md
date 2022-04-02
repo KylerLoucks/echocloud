@@ -3,16 +3,17 @@ Posts twitter updates when Bitcoin is down a specific threshold.
 
 
 # How it works
-Runs a headless chromium browser in a light-weight alpine-linux Docker container environment.
+Runs a headless chromium browser in a light-weight alpine-linux Docker container environment to take a screenshot of a stock graph.
+Utilizes Alpha Vantage API for stock data
 
-
+Container will not run continuously. It is recommended to run the container as a CRON job.
 
 # Environment variables
 
 ###### optional
 `BLOCKCHAIN_SYMBOL`
 
-specify the ticker symbol to find the stock price of (e.g. BTC, ETH, etc..)
+Specify the ticker symbol to find the stock price of (e.g. BTC, ETH, etc..) default is: BTC
 
 
 `AV_API_KEY`
@@ -41,10 +42,12 @@ Generated in the Twitter API developer portal under: Keys and Secrets > Authenti
 ```bash
 docker build -t echocloud .
 
-docker run -d -e AV_API_KEY=key -e TWITTER_API_KEY=key -e TWITTER_API_SECRET=key -e TWITTER_ACCESS_TOKEN=key -e TWITTER_ACCESS_TOKEN_SECRET=key  -e BLOCKCHAIN_SYMBOL=BTC echocloud
+docker run -d -e AV_API_KEY=key -e TWITTER_API_KEY=key -e TWITTER_API_SECRET=key -e TWITTER_ACCESS_TOKEN=key -e TWITTER_ACCESS_TOKEN_SECRET=key  -e BLOCKCHAIN_SYMBOL=ETH echocloud
 ```
   
   
-  
+
+
+
   
  

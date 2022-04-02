@@ -21,7 +21,7 @@ API Key for Alpha Vantage stock market data
 
   
 ## Twitter API "Consumer Keys"
-TWITTER_API_KEY
+TWITTER_API_KEY,
 TWITTER_API_SECRET
 
 Generated in the Twitter API developer portal under: Keys and Secrets > Consumer Keys
@@ -29,7 +29,7 @@ Generated in the Twitter API developer portal under: Keys and Secrets > Consumer
 
 
 ## Twitter API "Authentication Tokens"
-TWITTER_ACCESS_TOKEN
+TWITTER_ACCESS_TOKEN,
 TWITTER_ACCESS_TOKEN_SECRET
 
 Generated in the Twitter API developer portal under: Keys and Secrets > Authentication Tokens

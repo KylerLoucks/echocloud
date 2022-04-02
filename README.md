@@ -3,7 +3,8 @@ Posts twitter updates when Bitcoin is down a specific threshold.
 
 
 # How it works
-Runs a headless chromium browser in a light-weight alpine-linux Docker container environment to take a screenshot of a stock graph.
+Runs a headless chromium browser in a light-weight alpine-linux Docker container environment to take a screenshot of a stock graph and post to Twitter.
+
 Utilizes Alpha Vantage API for stock data
 
 Container will not run continuously. It is recommended to run the container as a CRON job.

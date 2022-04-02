@@ -16,17 +16,20 @@ Optional variable to specify the ticker symbol to find the stock price of (e.g. 
 If it is not specified, then the default symbol of 'BTC' will be used.
 
 `AV_API_KEY`
+
 Required API Key for Alpha Vantage stock market data
 
 
 `TWITTER_API_KEY`,
 `TWITTER_API_SECRET`
+
 Required twitter API keys, which can be generated in the Twitter API developer portal under: Keys and Secrets > Consumer Keys
 ![image](https://user-images.githubusercontent.com/60449948/161392837-4e1c9a5b-5f97-4805-bc7c-0813905c4177.png)
 
 
 `TWITTER_ACCESS_TOKEN`,
 `TWITTER_ACCESS_TOKEN_SECRET`
+
 
 Required twitter API keys, which can be generated in the Twitter API developer portal under: Keys and Secrets > Authentication Tokens
 ![image](https://user-images.githubusercontent.com/60449948/161392560-526f8d60-edbb-44e2-926f-f558363f13ca.png)

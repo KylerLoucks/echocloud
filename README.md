@@ -9,7 +9,7 @@ Runs a headless chromium browser in a light-weight alpine-linux Docker container
 
 # Environment variables
 
-###### <optional>
+###### optional
 `BLOCKCHAIN_SYMBOL`
 
 specify the ticker symbol to find the stock price of (e.g. BTC, ETH, etc..)

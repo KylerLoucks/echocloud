@@ -1,5 +1,5 @@
 # echocloud
-Posts twitter updates when Bitcoin is down a specific threshold.
+Posts twitter updates when Bitcoin or another specified Cryptocurrency is down a specific threshold.
 
 
 # How it works
@@ -8,6 +8,9 @@ Runs a headless chromium browser in a light-weight alpine-linux Docker container
 Utilizes Alpha Vantage API for stock data
 
 Container will not run continuously. It is recommended to run the container as a CRON job.
+
+Twitter post example:
+![image](https://user-images.githubusercontent.com/60449948/161397790-fd968587-51f0-4b5c-a7b5-45c2cfa540ef.png)
 
 # Environment variables
 

@@ -88,14 +88,16 @@ def tweet() -> None:
             return
     else:
         print("Price is down, but not low enough to do anything. Exiting program...")
-        scraper.screenshot_stock_graph(filename="canvas", hours_24=True)
+        
             
 
 
 
 
 def main():
-    tweet()
+    scraper.screenshot_stock_graph(filename="canvas", hours_24=True)
+    #tweet()
+    
 
 if __name__ == "__main__":
     start = time.perf_counter()

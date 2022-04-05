@@ -38,7 +38,6 @@ class WebScraper():
         options.add_argument("--no-zygote")
         options.add_argument("--disable-gpu")
         options.binary_location = '/usr/bin/chromium-browser'
-
         #options.add_argument('--start-maximized')
         #options.add_argument("--disable-infobars")
         #options.add_argument("--disable-browser-side-navigation")
@@ -66,10 +65,6 @@ class WebScraper():
             images[i].parentNode.removeChild(images[i]);
         }
         """
-        # remove_x_axis_labels_script = """
-        # var labels = document.getElementsByClassName("highcharts-axis-labels highcharts-xaxis-labels")[0];
-        # labels.parentNode.removeChild(labels);
-        # """
         
         driver.execute_script(remove_watermark_script) # remove watermark
         driver.execute_script(remove_highcharts_script) # remove highcharts.com text

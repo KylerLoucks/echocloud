@@ -88,6 +88,7 @@ def tweet() -> None:
             return
     else:
         print("Price is down, but not low enough to do anything. Exiting program...")
+        scraper.screenshot_stock_graph(filename="canvas", hours_24=True)
             
 
 
@@ -95,9 +96,6 @@ def tweet() -> None:
 
 def main():
     tweet()
-    # s3 = boto3.resource('s3')
-    # object = s3.Object("dva-c01-coursebucket", 'canvas.png')
-    # object.put(Body=open("./canvas.png", "rb"))
 
 if __name__ == "__main__":
     start = time.perf_counter()

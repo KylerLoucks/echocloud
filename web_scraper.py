@@ -33,19 +33,16 @@ class WebScraper():
         options.add_argument("--single-process")
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
-        options.add_argument("--window-size=1280x1696") # required for selenium execute_script()
+        options.add_argument("--window-size=1280x1696") # required for selenium 'execute_script()'
         options.add_argument("--disable-dev-tools")
         options.add_argument("--no-zygote")
         options.add_argument("--disable-gpu")
+        options.add_argument('--start-maximized')
         options.binary_location = '/usr/bin/chromium-browser'
-        #options.add_argument('--start-maximized')
-        #options.add_argument("--disable-infobars")
-        #options.add_argument("--disable-browser-side-navigation")
-        #options.add_argument("--disable-extensions")
+
 
         print("Attempting to open headless chrome browser...")
         driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver', options=options)
-        driver.maximize_window()
         driver.get(f"https://www.coindesk.com/price/{self.symbol_full}/") # open browser
         print("Opened headless chrome browser")
         
@@ -68,7 +65,6 @@ class WebScraper():
         
         driver.execute_script(remove_watermark_script) # remove watermark
         driver.execute_script(remove_highcharts_script) # remove highcharts.com text
-        #driver.execute_script(remove_x_axis_labels_script) # remove the time labels
         print("Removed unnecessary elements")
 
         if hours_24 == False:
@@ -89,6 +85,6 @@ class WebScraper():
             
             driver.close()
         except:
-            raise ValueError("Took too long to load the appropriate element for screenshot")
+            raise Exception("Took too long to load the appropriate element for screenshot")
 
         

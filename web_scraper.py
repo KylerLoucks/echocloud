@@ -13,7 +13,7 @@ class WebScraper():
 
     def __init__(self, symbol: str, crypto_api: CryptoAPI) -> None:
         self.symbol = symbol
-        self.symbol_full = crypto_api.get_symbol_full().lower()#CryptoAPI(API_KEY, self.symbol).get_symbol_full().lower()
+        self.symbol_full = crypto_api.get_symbol_full().lower()
 
     def screenshot_stock_graph(self, filename: str, hours_24: bool = False) -> None:
         '''
@@ -30,7 +30,7 @@ class WebScraper():
         '''
         options = Options()
         options.add_argument('--headless') # no browser pop-up - Remove this line when testing locally
-        #options.add_argument("--single-process")
+        options.add_argument("--single-process")
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument("--window-size=1280x1696") # required for selenium execute_script()
@@ -39,12 +39,10 @@ class WebScraper():
         options.add_argument("--disable-gpu")
         options.binary_location = '/usr/bin/chromium-browser'
 
-
         #options.add_argument('--start-maximized')
         #options.add_argument("--disable-infobars")
         #options.add_argument("--disable-browser-side-navigation")
         #options.add_argument("--disable-extensions")
-        #chrome_options.binary_location = '/opt/chromedriver/headless-chromium' # location for AWS lambda to find the chrome binary. AWS Lambda extracts layer files into the /opt directory
 
         print("Attempting to open headless chrome browser...")
         driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver', options=options)

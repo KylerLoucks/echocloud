@@ -30,7 +30,7 @@ class WebScraper():
         '''
         options = Options()
         options.add_argument('--headless') # no browser pop-up - Remove this line when testing locally
-        options.add_argument("--single-process")
+        #options.add_argument("--single-process")
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument("--window-size=1280x1696") # required for selenium 'execute_script()'
@@ -38,11 +38,11 @@ class WebScraper():
         options.add_argument("--no-zygote")
         options.add_argument("--disable-gpu")
         options.add_argument('--start-maximized')
-        options.binary_location = '/usr/bin/chromium-browser'
+        #options.binary_location = '/usr/bin/chromium-browser'
 
 
         print("Attempting to open headless chrome browser...")
-        driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver', options=options)
+        driver = webdriver.Chrome(options=options) #executable_path='/usr/bin/chromedriver', options=options
         driver.get(f"https://www.coindesk.com/price/{self.symbol_full}/") # open browser
         print("Opened headless chrome browser")
         
